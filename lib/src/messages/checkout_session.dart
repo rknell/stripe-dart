@@ -28,15 +28,16 @@ class CheckoutSession {
   final String? customer;
   final String? paymentIntent;
   final List<PaymentMethodType> paymentMethodTypes;
+  final String url;
 
-  CheckoutSession({
-    required this.object,
-    required this.id,
-    required this.paymentMethodTypes,
-    this.clientReferenceId,
-    this.customer,
-    this.paymentIntent,
-  });
+  CheckoutSession(
+      {required this.object,
+      required this.id,
+      required this.paymentMethodTypes,
+      this.clientReferenceId,
+      this.customer,
+      this.paymentIntent,
+      required this.url});
 
   factory CheckoutSession.fromJson(Map<String, dynamic> json) =>
       _$CheckoutSessionFromJson(json);
