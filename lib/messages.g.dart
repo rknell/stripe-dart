@@ -661,7 +661,7 @@ Map<String, dynamic> _$SubscriptionDataToJson(SubscriptionData instance) {
 ShippingAddressCollection _$ShippingAddressCollectionFromJson(
         Map<String, dynamic> json) =>
     ShippingAddressCollection(
-      AllowedCountries: (json['allowed_countries'] as List<dynamic>)
+      allowedCountries: (json['allowed_countries'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
     );
@@ -669,7 +669,7 @@ ShippingAddressCollection _$ShippingAddressCollectionFromJson(
 Map<String, dynamic> _$ShippingAddressCollectionToJson(
         ShippingAddressCollection instance) =>
     <String, dynamic>{
-      'allowed_countries': instance.AllowedCountries,
+      'allowed_countries': instance.allowedCountries,
     };
 
 CreateCustomerRequest _$CreateCustomerRequestFromJson(

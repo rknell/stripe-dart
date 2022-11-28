@@ -288,7 +288,7 @@ class SubscriptionData {
 
 @JsonSerializable()
 class ShippingAddressCollection {
-  final List<String> AllowedCountries;
+  final List<String> allowedCountries;
 
-  ShippingAddressCollection({required this.AllowedCountries});
+  ShippingAddressCollection({required this.allowedCountries});
 }
