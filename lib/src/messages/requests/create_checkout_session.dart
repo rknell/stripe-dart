@@ -93,6 +93,8 @@ class CreateCheckoutSessionRequest {
   /// Sessions in subscription mode.
   final SubscriptionData? subscriptionData;
 
+  final ShippingAddressCollection? shippingAddressCollection;
+
   CreateCheckoutSessionRequest({
     required this.successUrl,
     required this.cancelUrl,
@@ -107,6 +109,7 @@ class CreateCheckoutSessionRequest {
     this.taxIdCollection,
     this.paymentIntentData,
     this.subscriptionData,
+    this.shippingAddressCollection,
   });
 
   factory CreateCheckoutSessionRequest.fromJson(Map<String, dynamic> json) =>
@@ -281,4 +284,11 @@ class SubscriptionData {
   factory SubscriptionData.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionDataFromJson(json);
   Map<String, dynamic> toJson() => _$SubscriptionDataToJson(this);
+}
+
+@JsonSerializable()
+class ShippingAddressCollection {
+  final List<String> AllowedCountries;
+
+  ShippingAddressCollection({required this.AllowedCountries});
 }

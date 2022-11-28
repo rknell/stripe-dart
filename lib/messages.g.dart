@@ -463,6 +463,10 @@ CreateCheckoutSessionRequest _$CreateCheckoutSessionRequestFromJson(
           ? null
           : SubscriptionData.fromJson(
               json['subscription_data'] as Map<String, dynamic>),
+      shippingAddressCollection: json['shipping_address_collection'] == null
+          ? null
+          : ShippingAddressCollection.fromJson(
+              json['shipping_address_collection'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
@@ -493,6 +497,8 @@ Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
   writeNotNull('tax_id_collection', instance.taxIdCollection?.toJson());
   writeNotNull('payment_intent_data', instance.paymentIntentData?.toJson());
   writeNotNull('subscription_data', instance.subscriptionData?.toJson());
+  writeNotNull('shipping_address_collection',
+      instance.shippingAddressCollection?.toJson());
   return val;
 }
 
@@ -651,6 +657,20 @@ Map<String, dynamic> _$SubscriptionDataToJson(SubscriptionData instance) {
   writeNotNull('metadata', instance.metadata);
   return val;
 }
+
+ShippingAddressCollection _$ShippingAddressCollectionFromJson(
+        Map<String, dynamic> json) =>
+    ShippingAddressCollection(
+      AllowedCountries: (json['allowed_countries'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$ShippingAddressCollectionToJson(
+        ShippingAddressCollection instance) =>
+    <String, dynamic>{
+      'allowed_countries': instance.AllowedCountries,
+    };
 
 CreateCustomerRequest _$CreateCustomerRequestFromJson(
         Map<String, dynamic> json) =>
