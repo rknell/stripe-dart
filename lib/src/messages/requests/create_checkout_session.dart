@@ -291,4 +291,8 @@ class ShippingAddressCollection {
   final List<String> allowedCountries;
 
   ShippingAddressCollection({required this.allowedCountries});
+
+  factory ShippingAddressCollection.fromJson(Map<String, dynamic> json) =>
+      _$ShippingAddressCollectionFromJson(json);
+  Map<String, dynamic> toJson() => _$ShippingAddressCollectionToJson(this);
 }
